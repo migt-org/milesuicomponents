@@ -1,0 +1,20 @@
+{
+  "name": "milesuicomponents",
+  "version": "1.0.0",
+  "description": "Provides UI components common to the frontend apps",
+  "main": "index.js",
+  "module": "index.js",
+  "files": [
+    "src/components"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+  },
+  "keywords": ["react", "ui", "components"],
+  "author": "f.nanakwao",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {}
+}
