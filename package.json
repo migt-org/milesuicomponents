@@ -1,6 +1,6 @@
 {
   "name": "milesuicomponents",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides UI components common to the frontend apps",
   "main": "index.js",
   "module": "index.js",
@@ -11,9 +11,12 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "scripts": {
-  },
-  "keywords": ["react", "ui", "components"],
+  "scripts": {},
+  "keywords": [
+    "react",
+    "ui",
+    "components"
+  ],
   "author": "f.nanakwao",
   "license": "ISC",
   "type": "module",
