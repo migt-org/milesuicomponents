@@ -2,25 +2,27 @@ name: Publish to npm
 
 on:
   push:
-    branches: "main"
+    branches: ["main"]
 
 jobs:
   publish:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [18.x, 20.x, 22.x]
+
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        registry-url: 'https://registry.npmjs.org'
-    - run: npm ci
-    - run: npm run publish --access-public
-      env: 
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: "https://registry.npmjs.org/"
+
+      - run: npm istall
+
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
