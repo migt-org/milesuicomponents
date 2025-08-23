@@ -1,22 +1,8 @@
-export function Completed() {
+import "../styles/styles.css";
+export default function AssignmentStatus({ className, children, ...props }) {
   return (
     <>
-      <p className="assignment-status-completed">Completed</p>
-    </>
-  );
-}
-export function InProgress() {
-  return (
-    <>
-      <p className="assignment-status-in-progress">In Progress</p>
-    </>
-  );
-}
-
-export function NotStarted() {
-  return (
-    <>
-      <p className="assignment-status-not-started">Not Started</p>
+      <p className={`assignment-status ${className}`}>{children}</p>
     </>
   );
 }

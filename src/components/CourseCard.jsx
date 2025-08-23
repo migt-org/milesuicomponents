@@ -1,13 +1,8 @@
-import "./styles.css";
-
-export function CourseCard({ className, onClick, style, children }) {
+import "../styles/styles.css";
+export default function CourseCard({ className, children, ...props }) {
   return (
     <>
-      <div className={`${className} course-card`} onClick={onClick}>
-        <div className="course-card-child" style={style}>
-          {children}
-        </div>
-      </div>
+      <div className={`${className} course-card`}>{children}</div>
     </>
   );
 }

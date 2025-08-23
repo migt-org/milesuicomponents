@@ -1,9 +1,9 @@
-export function LoginForm({ onSubmit, children }) {
+import "../styles/styles.css";
+
+export default function LoginForm({ className, children, ...props }) {
   return (
     <>
-      <form onSubmit={onSubmit} className="log-in-form">
-        {children}
-      </form>
+      <form className={`log-in-form ${className}`}>{children}</form>
     </>
   );
 }

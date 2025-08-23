@@ -1,21 +1,9 @@
-import "./styles.css";
-import { useTheme } from "./ThemeContext";
+import "../styles/styles.css";
 
-export default function Button({ className, children, onClick, style, type }) {
-  const { theme } = useTheme();
-
+export default function Button({ className, children, ...props }) {
   return (
     <>
-      <button
-        onClick={onClick}
-        className={`${className} ${
-          theme === "light" ? "light-button" : "dark-button"
-        }`}
-        style={style}
-        type={type}
-      >
-        {children}
-      </button>
+      <button className={`${className} button-ui`}>{children}</button>
     </>
   );
 }

@@ -1,20 +1,9 @@
-import "./styles.css";
+import "../styles/styles.css";
 
-export function AuthBackground({ children }) {
+export default function AuthBackground({ className, children, ...props }) {
   return (
     <>
-      <div className="authentication-background">
-        <div className="authentication-background-wrapper">
-          <div className="authentication-background-wrapper-div">
-            {children}
-          </div>
-        </div>
-        <div className="attribution">
-          <p>
-            Powered by <a href="https://x.com/f_nanakwao">miles</a>
-          </p>
-        </div>
-      </div>
+      <div className={`authentication-background ${className}`}>{children}</div>
     </>
   );
 }

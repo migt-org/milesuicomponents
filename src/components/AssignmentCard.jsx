@@ -1,19 +1,8 @@
-
-export function AssignmentTitle({ clasdsName, children, ...props }) {
+import "../styles/styles.css";
+export default function AssignmentCard({ className, children, ...props }) {
   return (
     <>
-      <p className={`assignment-title ${clasdsName}`}>{children}</p>
-    </>
-  );
-}
-
-export function AssignmentCard({ className, children, ...props }) {
-  return (
-    <>
-      <div className={`${className}`}>
-        <div className="assignment-card-heading"></div>
-        <div className="assignment-card-body"></div>
-      </div>
+      <div className={`${className} assignment-card`}>{children}</div>
     </>
   );
 }

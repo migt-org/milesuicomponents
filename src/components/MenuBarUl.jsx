@@ -1,18 +1,9 @@
-import "./styles.css";
-import { useTheme } from "./ThemeContext";
+import "../styles/styles.css";
 
-export default function MenuBarUl({ children, className }) {
-  const { theme } = useTheme();
-
+export default function MenuBarUl({ children, className, ...props }) {
   return (
     <>
-      <div
-        className={`${className} ${
-          theme === "light" ? "light-menu-bar-ul" : "dark-menu-bar-ul"
-        }`}
-      >
-        {children}
-      </div>
+      <div className={`${className} menu-bar-ul`}>{children}</div>
     </>
   );
 }
