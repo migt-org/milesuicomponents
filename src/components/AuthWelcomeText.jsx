@@ -1,8 +1,17 @@
 import "../styles/styles.css";
-export default function AuthWelcomeText({ style, children }) {
+export default function AuthWelcomeText({
+  style={},
+  className,
+  children,
+  ...props
+}) {
   return (
     <>
-      <p className="authentication-background-welcome-text" style={style}>
+      <p
+        style={{ ...style }}
+        {...props}
+        className={`authentication-background-welcome-text ${className}`}
+      >
         {children}
       </p>
     </>

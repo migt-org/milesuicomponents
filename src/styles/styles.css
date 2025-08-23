@@ -57,7 +57,7 @@
 }
 
 /* ---------------------- Icons with Text ---------------------- */
-.icons-with-text {
+.li {
   border: none;
   list-style: none;
   width: 90%;
@@ -68,7 +68,7 @@
   cursor: pointer;
   align-items: center;
 }
-.icons-with-text:hover {
+.li {
   border-left: 0.4em solid var(--btn-border);
   background: linear-gradient(
     to right,

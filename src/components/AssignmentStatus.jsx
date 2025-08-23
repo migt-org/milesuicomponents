@@ -1,8 +1,19 @@
 import "../styles/styles.css";
-export default function AssignmentStatus({ className, children, ...props }) {
+export default function AssignmentStatus({
+  style={},
+  className,
+  children,
+  ...props
+}) {
   return (
     <>
-      <p className={`assignment-status ${className}`}>{children}</p>
+      <p
+        style={{ ...style }}
+        {...props}
+        className={`assignment-status ${className}`}
+      >
+        {children}
+      </p>
     </>
   );
 }

@@ -1,9 +1,20 @@
 import "../styles/styles.css";
 
-export default function CourseTitle({ children, className, ...props }) {
+export default function CourseTitle({
+  style = {},
+  children,
+  className,
+  ...props
+}) {
   return (
     <>
-      <h3 className={`course-card-title ${className}`}>{children}</h3>
+      <h3
+        style={{ ...style }}
+        {...props}
+        className={`course-card-title ${className}`}
+      >
+        {children}
+      </h3>
     </>
   );
 }

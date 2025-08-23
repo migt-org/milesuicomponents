@@ -1,9 +1,20 @@
 import "../styles/styles.css";
 
-export default function LoginForm({ className, children, ...props }) {
+export default function LoginForm({
+  style = {},
+  className,
+  children,
+  ...props
+}) {
   return (
     <>
-      <form className={`log-in-form ${className}`}>{children}</form>
+      <form
+        {...props}
+        style={{ ...style }}
+        className={`log-in-form ${className}`}
+      >
+        {children}
+      </form>
     </>
   );
 }

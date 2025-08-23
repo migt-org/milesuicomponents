@@ -3,10 +3,15 @@ import "../styles/styles.css";
 export default function AuthBackGroundWrapper({
   className,
   children,
+  style={},
   ...props
 }) {
   return (
-    <div className={`authentication-background-wrapper ${className}`}>
+    <div
+      style={{ ...style }}
+      {...props}
+      className={`authentication-background-wrapper ${className}`}
+    >
       {children}
     </div>
   );

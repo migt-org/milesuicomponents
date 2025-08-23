@@ -1,8 +1,19 @@
 import "../styles/styles.css";
-export default function AssignmentCard({ className, children, ...props }) {
+export default function AssignmentCard({
+  className = {},
+  style,
+  children,
+  ...props
+}) {
   return (
     <>
-      <div className={`${className} assignment-card`}>{children}</div>
+      <div
+        {...props}
+        style={{ ...style }}
+        className={`${className} assignment-card`}
+      >
+        {children}
+      </div>
     </>
   );
 }

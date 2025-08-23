@@ -1,8 +1,19 @@
 import "../styles/styles.css";
-export default function SubjectHeading({ className, children, ...props }) {
+export default function SubjectHeading({
+  style = {},
+  className,
+  children,
+  ...props
+}) {
   return (
     <>
-      <h3 className={`assignment-subject ${className}`}>{children}</h3>
+      <h3
+        {...props}
+        style={{ ...style }}
+        className={`assignment-subject ${className}`}
+      >
+        {children}
+      </h3>
     </>
   );
 }

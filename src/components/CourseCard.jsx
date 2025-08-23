@@ -1,8 +1,19 @@
 import "../styles/styles.css";
-export default function CourseCard({ className, children, ...props }) {
+export default function CourseCard({
+  style = {},
+  className,
+  children,
+  ...props
+}) {
   return (
     <>
-      <div className={`${className} course-card`}>{children}</div>
+      <div
+        style={{ ...style }}
+        {...props}
+        className={`${className} course-card`}
+      >
+        {children}
+      </div>
     </>
   );
 }
