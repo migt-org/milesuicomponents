@@ -1,10 +1,11 @@
 name: Publish Miles Packages
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '/**'  
+    push:
+        branches:  "main" 
+    pull_request:
+        branches:  "main" 
+        paths:
+        - 'ui/**'  
 
 jobs:
   build-and-publish:
@@ -19,12 +20,12 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
-        working-directory: ./
+        working-directory: ./ui
       - name: Build packages
-        run: npm run build
-        working-directory: ./
+        run: npm run build --if-present
+        working-directory: ./ui
       - name: Publish packages
         run: npm publish --access public
-        working-directory: ./
+        working-directory: ./ui
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
