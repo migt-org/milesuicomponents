@@ -2,7 +2,7 @@ import "../styles/styles.css";
 
 export default function CourseCardChild({
   style = {},
-  className,
+  className="",
   children,
   ...props
 }) {

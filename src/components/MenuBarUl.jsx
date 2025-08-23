@@ -3,7 +3,7 @@ import "../styles/styles.css";
 export default function MenuBarUl({
   style = {},
   children,
-  className,
+  className="",
   ...props
 }) {
   return (

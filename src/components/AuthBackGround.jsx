@@ -1,7 +1,7 @@
 import "../styles/styles.css";
 
 export default function AuthBackground({
-  className,
+  className="",
   style={},
   children,
   ...props

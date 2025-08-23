@@ -1,7 +1,7 @@
 import "../styles/styles.css";
 export default function AssignmentStatus({
   style={},
-  className,
+  className="",
   children,
   ...props
 }) {

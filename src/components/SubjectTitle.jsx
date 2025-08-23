@@ -1,7 +1,7 @@
 import "../styles/styles.css";
 export default function SubjectTitle({
   style = {},
-  clasdsName,
+  className = "",
   children,
   ...props
 }) {
@@ -10,7 +10,7 @@ export default function SubjectTitle({
       <p
         style={{ ...style }}
         {...props}
-        className={`assignment-title ${clasdsName}`}
+        className={`assignment-title ${className}`}
       >
         {children}
       </p>

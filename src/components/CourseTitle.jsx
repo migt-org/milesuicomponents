@@ -2,7 +2,7 @@ import "../styles/styles.css";
 
 export default function CourseTitle({
   style = {},
-  children,
+  children="",
   className,
   ...props
 }) {

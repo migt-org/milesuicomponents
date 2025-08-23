@@ -1,7 +1,7 @@
 import "../styles/styles.css";
 
 export default function AuthBackgroundWrapperDiv({
-  className,
+  className="",
   children,
   style={},
   ...props

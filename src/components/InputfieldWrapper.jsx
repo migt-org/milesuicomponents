@@ -2,7 +2,7 @@ import "../styles/styles.css";
 
 export default function InputFieldWrapper({
   style = {},
-  className,
+  className = "",
   children,
   ...props
 }) {

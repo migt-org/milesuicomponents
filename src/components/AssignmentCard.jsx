@@ -1,7 +1,7 @@
 import "../styles/styles.css";
 export default function AssignmentCard({
-  className = {},
-  style,
+  className="",
+  style={},
   children,
   ...props
 }) {
