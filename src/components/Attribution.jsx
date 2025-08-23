@@ -7,7 +7,7 @@ export default function Attribution({
   ...props
 }) {
   return (
-    <div style={{ ...style }} {...props} className={`attribution ${className}`}>
+    <div style={{ ...style }} {...props} className={`attri ${className}`}>
       {children}
     </div>
   );

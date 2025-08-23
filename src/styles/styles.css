@@ -188,7 +188,7 @@
   justify-content: center;
   flex-direction: column;
 }
-.attribution {
+.attri {
   width: 100%;
   position: absolute;
   bottom: 0.4rem;
@@ -196,7 +196,7 @@
   font-size: 0.7em;
   color: var(--secondary-color);
 }
-.attribution a {
+.attri a {
   text-decoration: none;
   color: var(--primary-color);
   font-weight: 900;
