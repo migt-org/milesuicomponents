@@ -2,16 +2,12 @@ import "../styles/styles.css";
 
 export default function Attribution({
   style = {},
-  className="",
+  className = "",
   children,
   ...props
 }) {
   return (
-    <div
-      style={{ ...style }}
-      {...props}
-      className={`attribution`` ${className}`}
-    >
+    <div style={{ ...style }} {...props} className={`attribution${className}`}>
       {children}
     </div>
   );
