@@ -20,12 +20,12 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
-        working-directory: ./ui
+        working-directory: ./
       - name: Build packages
         run: npm run build --if-present
-        working-directory: ./ui
+        working-directory: ./
       - name: Publish packages
         run: npm publish --access public
-        working-directory: ./ui
+        working-directory: ./
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
