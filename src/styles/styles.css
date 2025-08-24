@@ -254,36 +254,37 @@
 .loader {
   width: 48px;
   height: 48px;
-  border: 2px solid #fff;
+  border: 2px solid #FFF;
   border-radius: 50%;
   display: inline-block;
   position: relative;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
-.loader::before,
-.loader::after {
-  content: "";
+.loader::after,
+.loader::before {
+  content: '';  
   box-sizing: border-box;
   position: absolute;
   left: 0;
   top: 0;
-  background: #0099ff;
+  background: #FF3D00;
   width: 6px;
   height: 6px;
   border-radius: 50%;
 }
-.loader::before{
+.loader::before {
   left: auto;
   top: auto;
   right: 0;
-  border: 0;
+  bottom: 0;
 }
-@keyframes rotation{
-  0%{
+
+@keyframes rotation {
+  0% {
     transform: rotate(0deg);
   }
-  100%{
-    transform: rotate(360);
+  100% {
+    transform: rotate(360deg);
   }
-}
+} 
