@@ -11,7 +11,7 @@ export default function MenuBarUl({
       <div
         style={{ ...style }}
         {...props}
-        className={`${className} menu-bar-ul`}
+        className={`${className} sidebar`}
       >
         {children}
       </div>

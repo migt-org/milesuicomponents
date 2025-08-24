@@ -67,8 +67,9 @@
   font-weight: 800;
   cursor: pointer;
   align-items: center;
+  list-style-type: none;
 }
-.li {
+.li:hover {
   border-left: 0.4em solid var(--btn-border);
   background: linear-gradient(
     to right,
@@ -79,7 +80,7 @@
 }
 
 /* ---------------------- Menu Bar ---------------------- */
-.menu-bar-ul {
+.sidebar {
   margin: 0;
   width: 100%;
   display: flex;
@@ -88,7 +89,6 @@
   background-color: var(--menu-bg);
   border-bottom: 0.1em solid var(--menu-border);
 }
-
 /* ---------------------- Assignment Status ---------------------- */
 .assignment-status {
   margin: 0.5em 0;
@@ -254,7 +254,7 @@
 .loader {
   width: 48px;
   height: 48px;
-  border: 2px solid #FFF;
+  border: 2px solid #fff;
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -263,12 +263,12 @@
 }
 .loader::after,
 .loader::before {
-  content: '';  
+  content: "";
   box-sizing: border-box;
   position: absolute;
   left: 0;
   top: 0;
-  background: #FF3D00;
+  background: #ff3d00;
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -287,4 +287,4 @@
   100% {
     transform: rotate(360deg);
   }
-} 
+}
