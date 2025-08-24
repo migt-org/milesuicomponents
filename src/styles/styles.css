@@ -223,7 +223,7 @@
   right: 10px;
   z-index: 3;
 }
-.input-field-wrapper input {
+.input-field-wrapper input, .input-field-wrapper textarea {
   width: 100%;
   padding: 14px 12px 14px 36px;
   border: 0.2em solid var(--primary-color);
