@@ -16,3 +16,4 @@ export { default as LoginForm } from "./src/components/LoginForm.jsx";
 export { default as AuthBackGroundWrapper } from "./src/components/AuthBagroundWrapper.jsx";
 export { default as AuthBackgroundWrapperDiv } from "./src/components/AuthBackgroundWrapperDiv.jsx";
 export { default as Attribution } from "./src/components/Attribution.jsx";
+export { default as Loader } from "./src/components/Loader.jsx";

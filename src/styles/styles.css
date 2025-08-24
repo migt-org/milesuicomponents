@@ -251,3 +251,39 @@
   flex-direction: column;
   align-items: center;
 }
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #0099ff;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.loader::before{
+  left: auto;
+  top: auto;
+  right: 0;
+  border: 0;
+}
+@keyframes rotation{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360);
+  }
+}
