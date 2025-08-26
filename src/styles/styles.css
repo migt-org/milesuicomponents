@@ -223,7 +223,8 @@
   right: 10px;
   z-index: 3;
 }
-.input-field-wrapper input, .input-field-wrapper textarea {
+.input-field-wrapper input,
+.input-field-wrapper textarea {
   width: 100%;
   padding: 14px 12px 14px 36px;
   border: 0.2em solid var(--primary-color);
@@ -286,5 +287,35 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/*response status*/
+.response-status {
+  width: 250px;
+  height: 20px;
+  background-color: #cfcfcf;
+  border: none;
+  color: #213547;
+  position: relative;
+  border-top-left-radius: 0.2em;
+  border-bottom-left-radius: 0.2em;
+  animation: slidein 0.6s ease-out forwards;
+}
+.response-status .success {
+  border-left: 0.3em solid #016b01;
+}
+.response-status .failed {
+  border-left: 0.3em solid red;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
