@@ -292,21 +292,21 @@
 
 /*response status*/
 .response-status {
-  width: 250px;
-  height: 20px;
-  background-color: #cfcfcf;
-  border: none;
+  width: 300px;
+  height: 40px;
+  background-color: #f5f5f5;
+  border: 0.1em solid #cecccc;
   color: #213547;
   position: relative;
   border-top-left-radius: 0.2em;
   border-bottom-left-radius: 0.2em;
-  animation: slidein 0.6s ease-out forwards;
+  animation: slidein 0.6s ease-out forwards, fadeout 0.5s ease-in 2.5s forwards;
 }
 .response-status .success {
-  border-left: 0.3em solid #016b01;
+  border-left: 0.3em solid #016b01 !important;
 }
 .response-status .failed {
-  border-left: 0.3em solid red;
+  border-left: 0.3em solid red !important;
 }
 
 @keyframes slidein {
@@ -317,5 +317,16 @@
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(120%);
+    opacity: 0;
   }
 }
