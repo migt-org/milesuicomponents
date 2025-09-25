@@ -1,6 +1,6 @@
 {
   "name": "milesuicomponents",
-  "version": "1.5.0",
+  "version": "1.5.3",
   "description": "Provides UI components common to the frontend apps",
   "main": "index.js",
   "module": "index.js",
