@@ -17,8 +17,8 @@ jobs:
 
       - name: Set Git Identity
         run: |
-          git config --global user.name "nana-kwao"
-          git config --global user.email "nanakwaofreiku@gmail.com"
+          git config --global user.name "migt-org"
+          git config --global user.email "support@migt.org"
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
