@@ -1,7 +1,7 @@
 {
   "name": "milesuicomponents",
-  "version": "1.6.4",
-  "description": "Provides UI components common to the frontend apps",
+  "version": "1.6.5",
+  "description": "Provides UI components for Miles projects",
   "main": "index.js",
   "module": "index.js",
   "files": [
@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nana-kwao/milesuicomponents.git"
+    "url": "git+https://github.com/migt-org/milesuicomponents.git"
   },
   "publishConfig": {
     "access": "public",
@@ -21,7 +21,7 @@
     "ui",
     "components"
   ],
-  "author": "f.nanakwao",
+  "author": "miles innovation & technology",
   "license": "ISC",
   "type": "module",
   "dependencies": {}

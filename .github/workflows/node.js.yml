@@ -4,29 +4,35 @@ on:
   push:
     branches: ["main"]
 
+permissions:
+  contents: read
+  id-token: write # required for npm Trusted Publishing (OIDC)
+
 jobs:
   publish:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
-
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set Git Identity
-        run: |
-          git config --global user.name "migt-org"
-          git config --global user.email "support@migt.org"
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20.x"
+          node-version: "22.x"
           registry-url: "https://registry.npmjs.org/"
 
+      # Trusted Publishing needs npm >= 11.5.1
+      - run: npm install -g npm@latest
+
       - run: npm install
-      - run: npm publish --access-public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Check if version is already published
+        id: check
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if npm view "milesuicomponents@$VERSION" version >/dev/null 2>&1; then
+            echo "Version $VERSION already on npm, skipping publish"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - if: steps.check.outputs.skip != 'true'
+        run: npm publish --access public
