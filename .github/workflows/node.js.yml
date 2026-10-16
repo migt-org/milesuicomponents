@@ -35,4 +35,4 @@ jobs:
           fi
 
       - if: steps.check.outputs.skip != 'true'
-        run: npm publish --access public
+        run: npm publish --access public --loglevel verbose
