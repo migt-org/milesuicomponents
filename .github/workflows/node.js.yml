@@ -1,38 +1,61 @@
-name: Publish to npm
+name: Release
 
 on:
   push:
     branches: ["main"]
 
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 permissions:
-  contents: read
-  id-token: write # required for npm Trusted Publishing (OIDC)
+  contents: write # push release tags and the version branch
+  pull-requests: write # open the "Version Packages" PR
+  id-token: write # npm Trusted Publishing (OIDC)
 
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
+      # Node 24 ships npm 11, which supports Trusted Publishing (needs >= 11.5.1)
       - uses: actions/setup-node@v4
         with:
-          node-version: "22.x"
+          node-version: "24.x"
           registry-url: "https://registry.npmjs.org/"
+          cache: npm
 
-      # Trusted Publishing needs npm >= 11.5.1
-      - run: npm install -g npm@latest
+      - run: npm ci
 
-      - run: npm install
+      - name: Open or update the "Version Packages" PR
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          version: npx changeset version
+          title: "Version Packages"
+          commit: "version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check if version is already published
         id: check
+        if: steps.changesets.outputs.hasChangesets == 'false'
         run: |
           VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           if npm view "milesuicomponents@$VERSION" version >/dev/null 2>&1; then
             echo "Version $VERSION already on npm, skipping publish"
             echo "skip=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - if: steps.check.outputs.skip != 'true'
-        run: npm publish --access public --loglevel verbose
+      - name: Publish to npm
+        if: steps.changesets.outputs.hasChangesets == 'false' && steps.check.outputs.skip != 'true'
+        run: |
+          npm run build
+          npm publish --access public
+
+      - name: Tag the release
+        if: steps.changesets.outputs.hasChangesets == 'false' && steps.check.outputs.skip != 'true'
+        run: |
+          git tag "v${{ steps.check.outputs.version }}"
+          git push origin "v${{ steps.check.outputs.version }}"
