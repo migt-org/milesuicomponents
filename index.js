@@ -18,3 +18,4 @@ export { default as AuthBackgroundWrapperDiv } from "./src/components/AuthBackgr
 export { default as Attribution } from "./src/components/Attribution.jsx";
 export { default as Loader } from "./src/components/Loader.jsx";
 export { default as ResponseStatus } from "./src/components/ResponseStatus.jsx";
+export { default as MilesCard } from "./src/components/MilesCard.jsx";
